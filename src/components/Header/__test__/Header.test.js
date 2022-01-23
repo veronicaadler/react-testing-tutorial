@@ -1,13 +1,15 @@
 import { render, screen } from '@testing-library/react';
 import Header from '../Header';
 
-it('should render the same text as passed into title prop', () => {
-    render(<Header title='My Header'/>); //component to be tested, receiving a prop of title
-    const headingElement = screen.getByText(/my header/i) //getByText matches the component
-    //by the text within that component.  Here, we are using a regex.
-    expect(headingElement.toBeInTheDocument) //Here, we assert that this element should be in the 
-    //component.
+describe('Header', () => {
+        it('should render the same text as passed into title prop', () => {
+            render(<Header title='My Header'/>); //component to be tested, receiving a prop of title
+            const headingElement = screen.getByText(/my header/i) //getByText matches the component
+            //by the text within that component.  Here, we are using a regex.
+            expect(headingElement.toBeInTheDocument) //Here, we assert that this element should be in the 
+            //component.
 
+        })
 })
 
 /*

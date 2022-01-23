@@ -6,10 +6,9 @@ function AddInput({
     setTodos, todos
 }) {
 
-    const [todo, setTodo] = useState("")
+    const [todo, setTodo] = useState("") //values of the input
 
     const addTodo = () => {
-        if(!todo) return
         let updatedTodos = [
             ...todos,
             {
