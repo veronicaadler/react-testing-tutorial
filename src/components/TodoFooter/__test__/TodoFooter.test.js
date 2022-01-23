@@ -2,6 +2,44 @@ import { render, screen } from '@testing-library/react';
 import TodoFooter from "../TodoFooter"
 import { BrowserRouter } from "react-router-dom"
 
+const MockTodoFooter = (numberofIncompleteTasks) => {
+  return (
+  <BrowserRouter>
+    <TodoFooter numberofIncompleteTasks={numberofIncompleteTasks} />
+  </BrowserRouter>
+  )
+}
+
+it ('should render the correct amount of incomplete tasks', () => {
+  render(<MockTodoFooter numberofIncompleteTasks={5} />) //arrange
+  const paragraphElement = screen.getByRole('paragraph') //act
+  expect(paragraphElement).tobeIntheDocument(); //assert
+
+});
+
+it ('should render "task" when the number of incomplete tasks is one', () => {
+  render(<MockTodoFooter numberofIncompleteTasks={5} />) //arrange
+  const paragraphElement = screen.getByRole('paragraph') //act
+  expect(paragraphElement).toHaveTextContext('1 task left') //assert
+
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const MockTodoFooter = ({ numberOfIncompleteTasks }) => {
     return (
         <BrowserRouter>

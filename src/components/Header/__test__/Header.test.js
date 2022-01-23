@@ -10,6 +10,8 @@ it('should render the same text as passed into title prop', () => {
 
 })
 
+/*
+
 it('should render the same text as passed into title prop', () => {
     render(<Header title='My Header'/>);
     const headingElement = screen.getByRole("heading") //Here, we are indicating that we wish to
@@ -55,6 +57,7 @@ it('should render the same text as passed into title prop', () => {
 
 })
 
+*/
 
 
 
